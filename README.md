@@ -36,9 +36,6 @@ Durante el desarrollo se aplican conceptos fundamentales de control de versiones
 /
 ├── index.html
 ├── README.md
-├── css/
-│   └── styles.css
 ├── js/
 │   ├── requirements.js
 │   └── index.js
-└── assets/
