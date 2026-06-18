@@ -1,16 +1,19 @@
-let getSalesCoffee = async () => {
-    const url = "https://raw.githubusercontent.com/DATA-DAWM/Datos/refs/heads/main/Coffee/Coffe_sales.xml"
+'use strict';
+
+const getSalesCoffee = async () => {
+    const url = "https://raw.githubusercontent.com/DATA-DAWM/Datos/refs/heads/main/Coffee/Coffe_sales.xml";
+
     try {
         let response = await fetch(url);
 
-        if (!response.ok){
+        if (!response.ok) {
             throw new Error("Error en realizar la peticion.")
         }
 
         let rawData = await response.text();
 
         let parser = new DOMParser();
-        let data = parser.parseFromString(text, "application/xml");
+        let data = parser.parseFromString(rawData, "application/xml");
 
         return {
             success: true,
@@ -18,13 +21,11 @@ let getSalesCoffee = async () => {
         };
 
     } catch (error) {
-
-        return{
+        return {
             success: false,
             body: error.message
         };
-
     }
-}
+};
 
-export { getSalesCoffee }
+export { getSalesCoffee };
